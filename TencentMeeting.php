@@ -3,7 +3,7 @@
 
 namespace App\Utils;
 
-use App\Models\Config;
+//use App\Models\Config;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Log;
 
@@ -61,4 +61,9 @@ use Illuminate\Support\Facades\Log;
             return ['code' => $e->getCode(), 'msg' => $e->getMessage(), 'data' => null];
         }
     }
+
+$headers = generateHeaders('GET', '', '/v1/meetings');
+$results = request('/v1/meetings','GET',$headers);
+var_dump(headers);
+var_dump(results);
 
